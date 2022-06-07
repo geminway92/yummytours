@@ -41,9 +41,12 @@ ruta2.showRoute()
  
 </script>
 <div class="container d-flex flex-column justify-content-center align-items-center my-2 gap-5">
+    {#if routesArray}
     {#each routesArray as route}
-    <BaseCard photo={route['photo']} title={route['title']} subtitle={route['price']}/>
-    {/each}
+         <!-- content here -->
+         <BaseCard photo={route['photo']} title={route['title']} subtitle={route['price']}/>
+         {/each}
+    {/if}
 </div>
     
 <style>
