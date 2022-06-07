@@ -40,7 +40,7 @@ ruta2.showRoute()
 
  
 </script>
-<div class="container d-flex flex-column justify-content-center align-items-center my-2 gap-5">
+<div class="container d-flex flex-column justify-content-center m-special align-items-center gap-5 ">
     {#if routesArray}
     {#each routesArray as route}
         
@@ -50,5 +50,7 @@ ruta2.showRoute()
 </div>
     
 <style>
-
+.m-special{
+    margin-top: 5rem;
+}
 </style>
