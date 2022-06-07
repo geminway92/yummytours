@@ -16,7 +16,7 @@ const toggleButton = () => {
     </div>
     
     
-    <img on:click={toggleButton} src="/src/assets/logo.png" alt="">
+    <img on:click={toggleButton} src="/assets/logo.png" alt="">
 
      
 

@@ -1,0 +1,56 @@
+{
+    "routes": [
+        {
+            "title": "Granada Mozarabe",
+            "price": 338.5
+        },
+        {
+            "title": "Legado de Cáceres",
+            "price": 708
+        },
+        {
+            "title": "Madrid Clásico",
+            "price": 569.82
+        },
+        {
+            "title": "Córdoba Todo Color",
+            "price": 315.5
+        },
+        {
+            "title": "Oviedo Paraíso",
+            "price": 589.3
+        },
+        {
+            "title": "Saborea Salamanca",
+            "price": 615.7
+        },
+        {
+            "title": "Segovia",
+            "price": 590.45
+        },
+        {
+            "title": "Málaga",
+            "price": 478.68
+        },
+        {
+            "title": "Sanlúcar de Barrameda",
+            "price": 267.65
+        },
+        {
+            "title": "O grove",
+            "price": 655.35
+        },
+        {
+            "title": "Talavera de la Reina",
+            "price": 441.11
+        },
+        {
+            "title": "Antequera",
+            "price": 325
+        }, 
+        {
+            "title": "Asturias",
+            "price": 1083
+        }
+    ]
+}
