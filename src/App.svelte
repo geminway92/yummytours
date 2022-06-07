@@ -67,5 +67,6 @@ let isActiveMenu: boolean = false;
     /* background-color: #351753; */
     height: 100;
   }
+
   
 </style>

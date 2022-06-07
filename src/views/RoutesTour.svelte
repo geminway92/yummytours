@@ -50,7 +50,7 @@ ruta2.showRoute()
 </div>
     
 <style>
-.m-special{
+:global(.m-special){
     margin-top: 5rem;
 }
 </style>
