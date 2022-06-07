@@ -1,7 +1,7 @@
 <script lang="ts">
 import BaseCard from "../components/BaseCard.svelte";
 
-fetch("../../src/assets/data/routeData.json")
+fetch("assets/data/routeData.json")
     .then(res => res.json())
     .then(routes => {
         // console.log(routes)
@@ -43,8 +43,8 @@ ruta2.showRoute()
 <div class="container d-flex flex-column justify-content-center align-items-center my-2 gap-5">
     {#if routesArray}
     {#each routesArray as route}
-         <!-- content here -->
-         <BaseCard photo={route['photo']} title={route['title']} subtitle={route['price']}/>
+        
+         <BaseCard photo={route['photo']} title={route['title']} subtitle={route['price']} textInfo={route['location']} />
          {/each}
     {/if}
 </div>

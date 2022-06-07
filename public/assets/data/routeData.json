@@ -3,81 +3,97 @@
         {
             "title": "Granada Mozarabe",
             "photo": "assets/img/granada.jpeg",
+            "location": "Granada",
             "price": 338.5
         },
         {
             "title": "Legado de Cáceres",
             "photo": "assets/img/Caceres.jpeg",
+            "location": "Cáceres",
             "price": 708
         },
         {
             "title": "Madrid Clásico",
             "photo": "assets/img/Madrid.jpeg",
+            "location": "Madrid",
             "price": 569.82
         },
         {
             "title": "Córdoba Todo Color",
             "photo": "assets/img/Cordoba.jpeg",
+            "location": "Córdoba",
             "price": 315.5
         },
         {
             "title": "Oviedo Paraíso",
             "photo": "assets/img/Oviedo.jpeg",
+            "location": "Oviedo",
             "price": 589.3
         },
         {
             "title": "Saborea Salamanca",
             "photo": "assets/img/Salamanca.jpeg",
+            "location": "Salamanca",
             "price": 615.7
         },
         {
             "title": "Segovia",
             "photo": "assets/img/Segovia.jpeg",
+            "location": "Segovia",
             "price": 590.45
         },
         {
             "title": "Málaga",
             "photo": "assets/img/Malaga.jpeg",
+            "location": "Málaga",
             "price": 478.68
         },
         {
             "title": "Sanlúcar de Barrameda",
             "photo": "assets/img/Sanlucar.jpeg",
+            "location": "Cádiz",
             "price": 267.65
         },
         {
             "title": "Santander Infinito",
             "photo": "/assets/img/Santander.jpeg",
+            "location": "Santander",
             "price": 790
         },
         {
             "title": "O grove",
             "photo": "assets/img/O-grove.jpeg",
+            "location": "Pontevedra",
             "price": 655.35
         },
         {
             "title": "Talavera de la Reina",
             "photo": "assets/img/Talavera.jpeg",
+            "location": "Toledo",
             "price": 441.11
         },
         {
             "title": "Antequera",
             "photo": "assets/img/Antequera.jpeg",
+            "location": "Antequera",
             "price": 325
         }, 
         {
             "title": "Asturias",
             "photo": "assets/img/Asturias.jpeg",
+            "location": "Asturias",
             "price": 1083
         },
         {
             "title": "Cádiz",
             "photo": "assets/img/Cadiz.jpeg",
+            "location": "Cádiz",
             "price": 465
         },
         {
             "title": "Sevilla",
             "photo": "assets/img/Sevilla.jpeg",
+            "location": "Sevilla",
             "price": 445
         }
     ]

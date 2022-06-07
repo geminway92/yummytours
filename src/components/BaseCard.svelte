@@ -2,6 +2,7 @@
 export let title;
 export let subtitle;
 export let photo;
+export let textInfo;
 
 </script>
 
@@ -10,8 +11,8 @@ export let photo;
     <img class="h-50" src={photo} alt="">
     
     <div class="container w-100 position-absolute bottom-0  p-3 d-flex flex-column">
-        <h1>{title}</h1>
-        <p>Granada</p>
+        <h1 class="fs-4">{title}</h1>
+        <p>{textInfo}</p>
         <hr>
         <p class="text-center">Desde: {subtitle}€</p>
     </div>
