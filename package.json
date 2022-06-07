@@ -1,0 +1,28 @@
+{
+  "name": "yummytoursapp",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
+    "@tsconfig/svelte": "^2.0.1",
+    "svelte": "^3.44.0",
+    "svelte-check": "^2.7.2",
+    "svelte-preprocess": "^4.10.7",
+    "tslib": "^2.3.1",
+    "typescript": "^4.7.3",
+    "vite": "^2.9.9"
+  },
+  "dependencies": {
+    "@rollup/plugin-typescript": "^8.3.2",
+    "bootstrap": "^5.2.0-beta1",
+    "svelte-confetti": "^1.2.0",
+    "svelte-routing": "^1.6.0"
+  }
+}
