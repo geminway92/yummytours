@@ -4,7 +4,6 @@ import BaseCard from "../components/BaseCard.svelte";
 fetch("assets/data/routeData.json")
     .then(res => res.json())
     .then(routes => {
-        // console.log(routes)
         routesArray = routes.routes;
         
         routes.routes.forEach(element => {

@@ -32,9 +32,9 @@
       </button>
       <div class="collapse navbar-collapse" class:show="{ isActiveMenu }" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <Link to="/" class="nav-link" aria-current="page">Inicio</Link>
-          <Link to="/about" class="nav-link">Acerca</Link>
-          <Link to="/route-tour" class="nav-link">Rutas</Link>
+          <Link on:click={showMenu} to="/" class="nav-link" aria-current="page">Inicio</Link>
+          <Link on:click={showMenu} to="/about" class="nav-link">Acerca</Link>
+          <Link on:click={showMenu} to="/route-tour" class="nav-link">Rutas</Link>
   
         </div>
     </div>
