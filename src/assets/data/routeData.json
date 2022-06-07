@@ -2,55 +2,83 @@
     "routes": [
         {
             "title": "Granada Mozarabe",
+            "photo": "assets/img/granada.jpeg",
             "price": 338.5
         },
         {
             "title": "Legado de Cáceres",
+            "photo": "assets/img/Caceres.jpeg",
             "price": 708
         },
         {
             "title": "Madrid Clásico",
+            "photo": "assets/img/Madrid.jpeg",
             "price": 569.82
         },
         {
             "title": "Córdoba Todo Color",
+            "photo": "assets/img/Cordoba.jpeg",
             "price": 315.5
         },
         {
             "title": "Oviedo Paraíso",
+            "photo": "assets/img/Oviedo.jpeg",
             "price": 589.3
         },
         {
             "title": "Saborea Salamanca",
+            "photo": "assets/img/Salamanca.jpeg",
             "price": 615.7
         },
         {
             "title": "Segovia",
+            "photo": "assets/img/Segovia.jpeg",
             "price": 590.45
         },
         {
             "title": "Málaga",
+            "photo": "assets/img/Malaga.jpeg",
             "price": 478.68
         },
         {
             "title": "Sanlúcar de Barrameda",
+            "photo": "assets/img/Sanlucar.jpeg",
             "price": 267.65
         },
         {
+            "title": "Santander Infinito",
+            "photo": "/assets/img/Santander.jpeg",
+            "price": 790
+        },
+        {
             "title": "O grove",
+            "photo": "assets/img/O-grove.jpeg",
             "price": 655.35
         },
         {
             "title": "Talavera de la Reina",
+            "photo": "assets/img/Talavera.jpeg",
             "price": 441.11
         },
         {
             "title": "Antequera",
+            "photo": "assets/img/Antequera.jpeg",
             "price": 325
         }, 
         {
             "title": "Asturias",
+            "photo": "assets/img/Asturias.jpeg",
             "price": 1083
+        },
+        {
+            "title": "Cádiz",
+            "photo": "assets/img/Cadiz.jpeg",
+            "price": 465
+        },
+        {
+            "title": "Sevilla",
+            "photo": "assets/img/Sevila.jpeg",
+            "price": 445
         }
     ]
 }

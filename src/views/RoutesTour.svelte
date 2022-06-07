@@ -4,7 +4,8 @@ import BaseCard from "../components/BaseCard.svelte";
 fetch("../../src/assets/data/routeData.json")
     .then(res => res.json())
     .then(routes => {
-        console.log(routes)
+        // console.log(routes)
+        routesArray = routes.routes;
         
         routes.routes.forEach(element => {
             let route = new RouteTour(element.title, element.price)
@@ -13,7 +14,7 @@ fetch("../../src/assets/data/routeData.json")
        
     })
 
-
+let routesArray: object[] = [];
 class RouteTour {
     #title: string = '';
     #price: number = 0;
@@ -39,8 +40,10 @@ ruta2.showRoute()
 
  
 </script>
-<div class="container d-flex justify-content-center my-2">
-    <BaseCard/>
+<div class="container d-flex flex-column justify-content-center align-items-center my-2 gap-5">
+    {#each routesArray as route}
+    <BaseCard photo={route['photo']} title={route['title']} subtitle={route['price']}/>
+    {/each}
 </div>
     
 <style>
