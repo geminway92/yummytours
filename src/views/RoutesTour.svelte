@@ -37,13 +37,19 @@ let goRoute = (id: string) => {
 }
  
 </script>
-<div class="container d-flex flex-column justify-content-center m-special align-items-center gap-5 ">
-    {#if routesArray}
-    {#each routesArray as route}
-        
-        <BaseCard {goRoute} photo={route['photo']} title={route['title']} subtitle={route['price']} textInfo={route['location']} />
-    {/each}
-    {/if}
+<div class="container w-75 d-flex flex-wrap justify-content-center m-special align-content-center gap-5 ">
+
+        {#if routesArray}
+        {#each routesArray as route}
+        <div class="row">
+
+            <div class="col">
+                <BaseCard widthProp="300px"  {goRoute} photo={route['photo']} title={route['title']} subtitle={route['price']} textInfo={route['location']} />
+            </div>
+        </div>
+
+        {/each}
+        {/if}
 </div>
     
 <style>

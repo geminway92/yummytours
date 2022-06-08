@@ -4,12 +4,13 @@ export let subtitle;
 export let photo;
 export let textInfo;
 export let goRoute;
+export let widthProp;
 
 </script>
 
 
-<div on:click={goRoute(title)} class="card w-75 mx-2 shadow-lg">
-    <img class="h-50" src={photo} alt="">
+<div on:click={goRoute(title)} class="card mx-2 shadow-lg" style="width: {widthProp};">
+    <img class="h-50 " src={photo} alt="">
     
     <div class="container w-100 position-absolute bottom-0  p-3 d-flex flex-column">
         <h1 class="fs-4">{title}</h1>
@@ -35,4 +36,5 @@ img {
 .card:hover{
     transform: scale(1.05);
 }
+
 </style>
