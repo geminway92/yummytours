@@ -112,11 +112,11 @@ fetch("/assets/data/routeData.json")
     <img class="rounded photo-tour" src={currentRoute.photo} alt="imagen de {currentRoute.title}">
     <h1>{currentRoute.title}</h1>
     <div class="w-75 d-flex justify-content-start align-items-center gap-2">
-        <img class="svg" src="/public/assets/svg/euro.svg" alt="svg euro">
+        <img class="svg" src="assets/svg/euro.svg" alt="svg euro">
         <p class="m-0">Desde {currentRoute.price} €</p>
     </div>
     <div class="w-75 d-flex justify-content-start align-items-center gap-2">
-        <img class="svg" src="/public/assets/svg/salida.svg" alt="svg salida">
+        <img class="svg" src="/assets/svg/salida.svg" alt="svg salida">
         <p class="m-0">Salida: {currentRoute.output}</p>
     </div>
     

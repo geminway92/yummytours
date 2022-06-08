@@ -5,6 +5,8 @@
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691697/yummyTours/zckomcdflzyam8mttpyb.jpg",
             "location": "Granada",
             "output": [],
+            "brochure": "",
+            "video": [],
             "price": 338.5
         },
         {
@@ -13,6 +15,8 @@
             "location": "Cáceres",
             "availible": ["Mayo", "Junio", "Octubre", "Diciembre"],
             "output": ["Málaga", "Córdoba", "Sevilla"],
+            "brochure": "https://drive.google.com/file/d/1Zk0mc_6PTsdYaS3VJK019kv4637tCCUt/view?usp=sharing",
+            "video": [],
             "price": 708
         },
         {
@@ -20,6 +24,8 @@
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691731/yummyTours/clcyhyjv7qvqcgrnfswb.jpg",
             "location": "Madrid",
             "output": [],
+            "brochure": "",
+            "video": [],
             "price": 569.82
             
         },
@@ -28,6 +34,8 @@
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691676/yummyTours/yrmf5t2kqmrnplvk4sm1.jpg",
             "location": "Córdoba",
             "output": [],
+            "brochure": "",
+            "video": [],
             "price": 315.5
         },
         {
@@ -35,6 +43,8 @@
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691841/yummyTours/gq2e3wpprxp3tpfhzdjz.jpg",
             "location": "Oviedo",
             "output": [],
+            "brochure": "",
+            "video": [],
             "price": 589.3
         },
         {
@@ -42,6 +52,8 @@
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691857/yummyTours/s2qo5hlgzjmhrdrkx8zg.jpg",
             "location": "Salamanca",
             "output": [],
+            "brochure": "",
+            "video": [],
             "price": 615.7
         },
         {
@@ -49,6 +61,8 @@
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691924/yummyTours/uwekvnpbr14dgbj15uca.jpg",
             "location": "Segovia",
             "output": [],
+            "brochure": "",
+            "video": [],
             "price": 590.45
         },
         {
@@ -56,6 +70,8 @@
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691754/yummyTours/nqjk3l3cdt7edct65u5a.jpg",
             "location": "Málaga",
             "output": [],
+            "brochure": "",
+            "video": [],
             "price": 478.68
         },
         {
@@ -63,6 +79,8 @@
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691870/yummyTours/rcgubwis9pdolboi16xd.jpg",
             "location": "Cádiz",
             "output": [],
+            "brochure": "",
+            "video": [],
             "price": 267.65
         },
         {
@@ -70,6 +88,8 @@
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691887/yummyTours/ojlpsabsc6zz1n9jmodh.jpg",
             "location": "Santander",
             "output": [],
+            "brochure": "",
+            "video": [],
             "price": 790
         },
         {
@@ -77,6 +97,8 @@
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691771/yummyTours/eigqj78nesgkjmzfjhsb.jpg",
             "location": "Pontevedra",
             "output": [],
+            "brochure": "",
+            "video": [],
             "price": 655.35
         },
         {
@@ -84,6 +106,8 @@
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654692007/yummyTours/dbz3dn8bvg8fwhfwbubf.jpg",
             "location": "Toledo",
             "output": [],
+            "brochure": "",
+            "video": [],
             "price": 441.11
         },
         {
@@ -91,6 +115,8 @@
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654690914/yummyTours/ymb7xc818ldgbkgp9qvz.jpg",
             "location": "Antequera",
             "output": [],
+            "brochure": "",
+            "video": [],
             "price": 325
         }, 
         {
@@ -98,6 +124,8 @@
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691607/yummyTours/kkfea1bu7h2qjpqlszuu.jpg",
             "location": "Asturias",
             "output": [],
+            "brochure": "",
+            "video": ["https://www.youtube.com/embed/xuIn_LI21rE", "https://www.youtube.com/embed/2nHjE_wcCK4"],
             "price": 1083
         },
         {
@@ -105,6 +133,8 @@
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691664/yummyTours/zuloipp9vb5jjvapoiey.jpg",
             "location": "Cádiz",
             "output": [],
+            "brochure": "",
+            "video": [],
             "price": 465
         },
         {
@@ -112,6 +142,8 @@
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691951/yummyTours/fopui2oigjzkj4roocok.jpg",
             "location": "Sevilla",
             "output": [],
+            "brochure": "",
+            "video": [],
             "price": 445
         }
     ]
