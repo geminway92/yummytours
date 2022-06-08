@@ -6,20 +6,10 @@ export let params = {};
 
 let routeList: Object[] =  [];
 
-
 fetch("/public/assets/data/routeData.json")
     .then(res => res.json())
     .then(routeData => {
-        
         routeList = routeData.routes;
-
-        const currentRoute = new CurrentRoute(params['id'], params['id'])
-        currentRoute.price = currentRoute.findByID()['price']
-        
-
-        console.log(currentRoute)
-        
-
     })
 
 
@@ -27,11 +17,13 @@ fetch("/public/assets/data/routeData.json")
         #id: String = '';
         title: String = '';
         #price: number = 0;
+        #photo: string = '';
         
-        constructor(id: string, title: string, price?: number){
+        constructor(id: string, title: string, price?: number, photo?: string){
             this.#id = id;
             this.title = title;
             this.#price = price;
+            this.#photo = photo;
         }
 
         get id(){
@@ -41,9 +33,17 @@ fetch("/public/assets/data/routeData.json")
         get price(){
             return this.#price;
         }
+
+        get photo(){
+            return this.#photo;
+        }
         
         set price(newPrice: number){
             this.#price =  newPrice;
+        }
+
+        set photo(newImg: string){
+            this.#photo = newImg;
         }
 
         findByID(){
@@ -51,10 +51,22 @@ fetch("/public/assets/data/routeData.json")
         }
     }
 
+    const currentRoute = new CurrentRoute(params['id'], params['id'])
+    $:{
+        if(routeList.length > 0){
+            currentRoute.price = currentRoute.findByID()['price']
+            currentRoute.photo = currentRoute.findByID()['photo']
+        }
+    }
+    
+        
+
 </script>
-
-<div class="m-special">
-
-    <h1>ROUTE</h1>
-    <p>{params['id']}</p>
+{#if currentRoute}
+     
+<div class="m-special container w-100 d-flex flex-column align-items-center">
+    <img src={currentRoute.photo} alt="">
+    <h1>{currentRoute.title}</h1>
+    <p>Desde {currentRoute.price}</p>
 </div>
+{/if}
