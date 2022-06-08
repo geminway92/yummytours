@@ -4,96 +4,114 @@
             "title": "Granada Mozarabe",
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691697/yummyTours/zckomcdflzyam8mttpyb.jpg",
             "location": "Granada",
+            "output": [],
             "price": 338.5
         },
         {
             "title": "Legado de Cáceres",
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691648/yummyTours/jrluleazxypholieausr.jpg",
             "location": "Cáceres",
+            "availible": ["Mayo", "Junio", "Octubre", "Diciembre"],
+            "output": ["Málaga", "Córdoba", "Sevilla"],
             "price": 708
         },
         {
             "title": "Madrid Clásico",
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691731/yummyTours/clcyhyjv7qvqcgrnfswb.jpg",
             "location": "Madrid",
+            "output": [],
             "price": 569.82
+            
         },
         {
             "title": "Córdoba Todo Color",
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691676/yummyTours/yrmf5t2kqmrnplvk4sm1.jpg",
             "location": "Córdoba",
+            "output": [],
             "price": 315.5
         },
         {
             "title": "Oviedo Paraíso",
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691841/yummyTours/gq2e3wpprxp3tpfhzdjz.jpg",
             "location": "Oviedo",
+            "output": [],
             "price": 589.3
         },
         {
             "title": "Saborea Salamanca",
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691857/yummyTours/s2qo5hlgzjmhrdrkx8zg.jpg",
             "location": "Salamanca",
+            "output": [],
             "price": 615.7
         },
         {
             "title": "Segovia",
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691924/yummyTours/uwekvnpbr14dgbj15uca.jpg",
             "location": "Segovia",
+            "output": [],
             "price": 590.45
         },
         {
             "title": "Málaga",
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691754/yummyTours/nqjk3l3cdt7edct65u5a.jpg",
             "location": "Málaga",
+            "output": [],
             "price": 478.68
         },
         {
             "title": "Sanlúcar de Barrameda",
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691870/yummyTours/rcgubwis9pdolboi16xd.jpg",
             "location": "Cádiz",
+            "output": [],
             "price": 267.65
         },
         {
             "title": "Santander Infinito",
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691887/yummyTours/ojlpsabsc6zz1n9jmodh.jpg",
             "location": "Santander",
+            "output": [],
             "price": 790
         },
         {
             "title": "O grove",
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691771/yummyTours/eigqj78nesgkjmzfjhsb.jpg",
             "location": "Pontevedra",
+            "output": [],
             "price": 655.35
         },
         {
             "title": "Talavera de la Reina",
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654692007/yummyTours/dbz3dn8bvg8fwhfwbubf.jpg",
             "location": "Toledo",
+            "output": [],
             "price": 441.11
         },
         {
             "title": "Antequera",
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654690914/yummyTours/ymb7xc818ldgbkgp9qvz.jpg",
             "location": "Antequera",
+            "output": [],
             "price": 325
         }, 
         {
             "title": "Asturias",
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691607/yummyTours/kkfea1bu7h2qjpqlszuu.jpg",
             "location": "Asturias",
+            "output": [],
             "price": 1083
         },
         {
             "title": "Cádiz",
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691664/yummyTours/zuloipp9vb5jjvapoiey.jpg",
             "location": "Cádiz",
+            "output": [],
             "price": 465
         },
         {
             "title": "Sevilla",
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691951/yummyTours/fopui2oigjzkj4roocok.jpg",
             "location": "Sevilla",
+            "output": [],
             "price": 445
         }
     ]
