@@ -12,19 +12,44 @@ fetch("/public/assets/data/routeData.json")
     .then(routeData => {
         
         routeList = routeData.routes;
-        searchRoute()
+
+        const currentRoute = new CurrentRoute(params['id'], params['id'])
+        currentRoute.price = currentRoute.findByID()['price']
+        
+
+        console.log(currentRoute)
+        
+
     })
 
 
-    const searchRoute = () => {
-        const test = routeList.filter( route => route['title'] === params['id'])
-        console.log(test)
-        console.log(routeList)
-    }
+    class CurrentRoute {
+        #id: String = '';
+        title: String = '';
+        #price: number = 0;
+        
+        constructor(id: string, title: string, price?: number){
+            this.#id = id;
+            this.title = title;
+            this.#price = price;
+        }
 
-    // class CurrentRoute {
-    //     constructor(title)
-    // }
+        get id(){
+            return this.#id
+        }
+
+        get price(){
+            return this.#price;
+        }
+        
+        set price(newPrice: number){
+            this.#price =  newPrice;
+        }
+
+        findByID(){
+            return routeList.find( route => route['title'] === this.#id)
+        }
+    }
 
 </script>
 
