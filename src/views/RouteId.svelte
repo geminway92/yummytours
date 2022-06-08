@@ -4,13 +4,14 @@ import RoutesTour from "./RoutesTour.svelte";
 
 export let params = {};
 
-let routeList: Object[] =  [];
+let routeList: Object[] = [];
 
-fetch("/public/assets/data/routeData.json")
+fetch("/assets/data/routeData.json")
     .then(res => res.json())
     .then(routeData => {
-        routeList = routeData.routes;
+        routeList = routeData['routes']
     })
+    .catch(err => console.log(err));
 
 
     class CurrentRoute {
@@ -19,7 +20,7 @@ fetch("/public/assets/data/routeData.json")
         #price: number = 0;
         #photo: string = '';
         
-        constructor(id: string, title: string, price?: number, photo?: string){
+        constructor(id: string, title: string, price: number, photo: string){
             this.#id = id;
             this.title = title;
             this.#price = price;
@@ -46,26 +47,30 @@ fetch("/public/assets/data/routeData.json")
             this.#photo = newImg;
         }
 
-        findByID(){
-            return routeList.find( route => route['title'] === this.#id)
+        findByID(routesList ){
+            console.log(routesList, 'que trae')
+            return routesList.find( route => route['title'] === this.#id)
         }
     }
 
-    const currentRoute = new CurrentRoute(params['id'], params['id'])
+    const currentRoute = new CurrentRoute(params['id'], params['id'], undefined, undefined)
+
     $:{
         if(routeList.length > 0){
-            currentRoute.price = currentRoute.findByID()['price']
-            currentRoute.photo = currentRoute.findByID()['photo']
+            currentRoute.price = currentRoute.findByID(routeList)['price']
+            currentRoute.photo = currentRoute.findByID(routeList)['photo']
+            console.log(currentRoute)
+        
         }
     }
     
         
 
 </script>
-{#if currentRoute}
+{#if routeList}
      
 <div class="m-special container w-100 d-flex flex-column align-items-center">
-    <img src={currentRoute.photo} alt="">
+    <img src={currentRoute.photo} alt="imagen de {currentRoute.title}">
     <h1>{currentRoute.title}</h1>
     <p>Desde {currentRoute.price}</p>
 </div>
