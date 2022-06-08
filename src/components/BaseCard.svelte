@@ -3,11 +3,12 @@ export let title;
 export let subtitle;
 export let photo;
 export let textInfo;
+export let goRoute;
 
 </script>
 
 
-<div class="card w-75 mx-2 shadow-lg">
+<div on:click={goRoute(title)} class="card w-75 mx-2 shadow-lg">
     <img class="h-50" src={photo} alt="">
     
     <div class="container w-100 position-absolute bottom-0  p-3 d-flex flex-column">

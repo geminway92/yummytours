@@ -5,6 +5,7 @@
   import About from "./views/About.svelte";
   import RoutesTour from "./views/RoutesTour.svelte";
   import Meta from './lib/Meta.svelte';
+  import RouteId from "./views/RouteId.svelte";
 
   let isActiveMenu: boolean = false;
 
@@ -17,9 +18,10 @@
 	}
 
   const showMenu = () => {
-  isActiveMenu = !isActiveMenu;
-  console.log(isActiveMenu)
- }
+    isActiveMenu = !isActiveMenu;
+  }
+
+
 </script>
 
 <div>
@@ -49,7 +51,10 @@
     <Route path="/route-tour">
       <RoutesTour/>
     </Route>
-  </Router>
+    <Route path="/route/:id" let:params>
+      <RouteId {params}/>
+    </Route>
+</Router>
 </div>
   
 <style>
@@ -60,5 +65,8 @@
     height: 100;
   }
 
+  :global(.m-special){
+    margin-top: 5rem;
+  }
   
 </style>

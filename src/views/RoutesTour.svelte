@@ -1,4 +1,6 @@
 <script lang="ts">
+import { navigate } from "svelte-routing";
+
 import BaseCard from "../components/BaseCard.svelte";
 
 fetch("assets/data/routeData.json")
@@ -6,11 +8,6 @@ fetch("assets/data/routeData.json")
     .then(routes => {
         routesArray = routes.routes;
         
-        routes.routes.forEach(element => {
-            let route = new RouteTour(element.title, element.price)
-            route.addRoute(route)
-        });
-       
     })
 
 let routesArray: object[] = [];
@@ -34,22 +31,21 @@ class RouteTour {
         this.routes.push(route)
     }
 }
-const ruta2 = new RouteTour('Cádiz', 250)
-ruta2.showRoute()
 
+let goRoute = (id: string) => {
+     navigate(`/route/${id}`, {replace: true})
+}
  
 </script>
 <div class="container d-flex flex-column justify-content-center m-special align-items-center gap-5 ">
     {#if routesArray}
     {#each routesArray as route}
         
-         <BaseCard photo={route['photo']} title={route['title']} subtitle={route['price']} textInfo={route['location']} />
-         {/each}
+        <BaseCard {goRoute} photo={route['photo']} title={route['title']} subtitle={route['price']} textInfo={route['location']} />
+    {/each}
     {/if}
 </div>
     
 <style>
-:global(.m-special){
-    margin-top: 5rem;
-}
+
 </style>
