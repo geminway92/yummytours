@@ -103,7 +103,7 @@ fetch("/assets/data/routeData.json")
             widthIframe = 630
         }
     }
-
+    
 
 </script>
 {#if currentRoute.price}
@@ -123,7 +123,7 @@ fetch("/assets/data/routeData.json")
     
         
 
-        {#if currentRoute.output.length === 2}
+        {#if currentRoute.brochure.length === 2}
         <a class="btn btn-primary fw-bold py-3 my-3" target="_blank" href="{currentRoute.brochure[0]}">
             <img class="svg" src="/assets/svg/download.svg" alt="svg descargar"> Folleto
         </a>
@@ -132,7 +132,7 @@ fetch("/assets/data/routeData.json")
             <img class="svg" src="/assets/svg/download.svg" alt="svg descargar"> Folleto detallado
         </a>
 
-        {:else if  currentRoute.output.length === 1}
+        {:else if  currentRoute.brochure.length === 1}
             <a class="btn btn-primary py-3 my-3" target="_blank" href="{currentRoute.brochure[0]}">
             <img class="svg" src="/assets/svg/download.svg" alt="svg descargar"> Folleto
             </a>

@@ -25,8 +25,8 @@
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691731/yummyTours/clcyhyjv7qvqcgrnfswb.jpg",
             "location": "Madrid",
             "available": ["Junio", "Julio", "Agosto", "Diciembre"],
-            "output": [],
-            "brochure": [],
+            "output": ["Málaga", "Madrid"],
+            "brochure": ["https://drive.google.com/file/d/1SWRDn6Ag6hgWMjRtgClp6Mb9n5lbDhgA/view?usp=sharing","https://drive.google.com/file/d/1zZNwj8lg_STatLjlYbwXgfkE4Ydc1ORs/view?usp=sharing"],
             "video": [],
             "price": 569.82
             
