@@ -131,13 +131,14 @@ fetch("/assets/data/routeData.json")
         <a class="btn btn-secondary py-3 my-3" target="_blank" href="{currentRoute.brochure[1]}">
             <img class="svg" src="/assets/svg/download.svg" alt="svg descargar"> Folleto detallado
         </a>
-    
-        {:else}
-        <a class="btn btn-primary py-3 my-3" target="_blank" href="{currentRoute.brochure[0]}">
-            <img class="svg" src="/assets/svg/download.svg" alt="svg descargar"> Folleto
-        </a>
 
-        
+        {:else if  currentRoute.output.length === 1}
+            <a class="btn btn-primary py-3 my-3" target="_blank" href="{currentRoute.brochure[0]}">
+            <img class="svg" src="/assets/svg/download.svg" alt="svg descargar"> Folleto
+            </a>
+        {:else}
+        <span>No hay folletos disponibles</span>
+    
         {/if}
     
     {#each currentRoute.video as video}
