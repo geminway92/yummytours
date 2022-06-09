@@ -46,10 +46,10 @@
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691841/yummyTours/gq2e3wpprxp3tpfhzdjz.jpg",
             "location": "Oviedo",
             "available": ["Abril","Mayo","Junio","Julio","Septiembre"],
-            "output": [],
-            "brochure": [],
+            "output": ["Málaga", "Madrid"],
+            "brochure": ["https://drive.google.com/file/d/17SGCyPSlrLzEclMSwwrhM0IY5ngDTMDE/view?usp=sharing","https://drive.google.com/file/d/1H81faojJoT9Tdg2_bE2QdsOx08aA1qai/view?usp=sharing"],
             "video": [],
-            "price": 589.3
+            "price": 600
         },
         {
             "title": "Saborea Salamanca",
