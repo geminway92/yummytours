@@ -106,13 +106,13 @@ fetch("/assets/data/routeData.json")
 
 
 </script>
-{#if route}
+{#if currentRoute.price}
      
 <div class="m-special container w-100 d-flex flex-column align-items-center">
     <img class="rounded photo-tour" src={currentRoute.photo} alt="imagen de {currentRoute.title}">
     <h1>{currentRoute.title}</h1>
     <div class="w-75 d-flex justify-content-start align-items-center gap-2">
-        <img class="svg" src="assets/svg/euro.svg" alt="svg euro">
+        <img class="svg" src="/assets/svg/euro.svg" alt="svg euro">
         <p class="m-0">Desde {currentRoute.price} €</p>
     </div>
     <div class="w-75 d-flex justify-content-start align-items-center gap-2">
@@ -128,6 +128,14 @@ fetch("/assets/data/routeData.json")
     {/each}
     
 </div>
+{:else}
+<div class="container m-special  d-flex justify-content-center align-items-center">
+
+    <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+    
 {/if}
 
 <style>
