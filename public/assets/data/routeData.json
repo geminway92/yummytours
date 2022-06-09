@@ -18,7 +18,7 @@
             "output": ["Málaga", "Córdoba", "Sevilla"],
             "brochure": ["https://drive.google.com/file/d/1ZmlNV2jva8Ho6OvM95trrS9q1GcJkBrR/view?usp=sharing","https://drive.google.com/file/d/1Zk0mc_6PTsdYaS3VJK019kv4637tCCUt/view?usp=sharing"],
             "video": [],
-            "price": 708
+            "price": 700
         },
         {
             "title": "Madrid Clásico",
@@ -28,7 +28,7 @@
             "output": ["Málaga", "Madrid"],
             "brochure": ["https://drive.google.com/file/d/1SWRDn6Ag6hgWMjRtgClp6Mb9n5lbDhgA/view?usp=sharing","https://drive.google.com/file/d/1zZNwj8lg_STatLjlYbwXgfkE4Ydc1ORs/view?usp=sharing"],
             "video": [],
-            "price": 569.82
+            "price": 570
             
         },
         {
@@ -142,7 +142,7 @@
                 "https://drive.google.com/file/d/1XMddpqpkZIaSz4sCY_5LMpz9XCqQJNSg/view?usp=sharing"
             ],
             "video": ["https://www.youtube.com/embed/xuIn_LI21rE", "https://www.youtube.com/embed/2nHjE_wcCK4"],
-            "price": 1083
+            "price": 990
         },
         {
             "title": "Cádiz",
