@@ -1,5 +1,5 @@
 import App from './App.svelte'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import '../main.scss';
 
 const app = new App({
   target: document.getElementById('app')

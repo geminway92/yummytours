@@ -57,16 +57,20 @@
 </Router>
 </div>
   
-<style>
+<style lang="scss">
   :root {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    /* background-color: #351753; */
+    
     height: 100;
   }
+  $primary: #351753;
 
   :global(.m-special){
     margin-top: 5rem;
+  }
+  nav{
+    background: $primary
   }
   
 </style>
