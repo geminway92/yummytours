@@ -22,10 +22,10 @@ fetch("/assets/data/routeData.json")
         #price: number = 0;
         #photo: string = '';
         #output: string[] = [];
-        #brochure: string = '';
+        #brochure: string[] = [];
         #video: string[] = [];
         
-        constructor(id: string, title: string, price: number, photo: string, output: string[]){
+        constructor(id: string, title: string, price?: number, photo?: string, output?: string[]){
             this.#id = id;
             this.title = title;
             this.#price = price;
@@ -84,7 +84,7 @@ fetch("/assets/data/routeData.json")
         }
     }
 
-    const currentRoute = new CurrentRoute(params['id'], params['id'], undefined, undefined, [])
+    const currentRoute = new CurrentRoute(params['id'], params['id'])
 
     $:{
         if(routeList.length > 0){
@@ -94,7 +94,6 @@ fetch("/assets/data/routeData.json")
             key.forEach(key => {
                 currentRoute[key] = route[key]
             });
-        
         }
     }
 
@@ -120,8 +119,25 @@ fetch("/assets/data/routeData.json")
         <p class="m-0">Salida: {currentRoute.output}</p>
     </div>
     
+    
+        
 
-    <a class="btn btn-primary py-3 my-3" target="_black" href="{currentRoute.brochure}">Descargar Folleto</a>
+        {#if currentRoute.output.length === 2}
+        <a class="btn btn-primary py-3 my-3" target="_black" href="{currentRoute.brochure[0]}">
+            <img class="svg" src="/assets/svg/download.svg" alt="svg descargar"> Folleto
+        </a>
+
+        <a class="btn btn-secondary py-3 my-3" target="_black" href="{currentRoute.brochure[1]}">
+            <img class="svg" src="/assets/svg/download.svg" alt="svg descargar"> Folleto detallado
+        </a>
+    
+        {:else}
+        <a class="btn btn-primary py-3 my-3" target="_black" href="{currentRoute.brochure[0]}">
+            <img class="svg" src="/assets/svg/download.svg" alt="svg descargar"> Folleto
+        </a>
+
+        
+        {/if}
     
     {#each currentRoute.video as video}
         <iframe class="m-3" width="{widthIframe}" height="315" src={video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -139,6 +155,9 @@ fetch("/assets/data/routeData.json")
 {/if}
 
 <style>
+a{
+    width: 200px;
+}
 .photo-tour{
     width: 80%;
     height: 200px;
