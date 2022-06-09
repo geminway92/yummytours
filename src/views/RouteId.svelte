@@ -2,6 +2,7 @@
 import RoutesTour from "./RoutesTour.svelte";
 
 
+
 export let params = {};
 
 let routeList: Object[] = [];
@@ -123,16 +124,16 @@ fetch("/assets/data/routeData.json")
         
 
         {#if currentRoute.output.length === 2}
-        <a class="btn btn-primary py-3 my-3" target="_black" href="{currentRoute.brochure[0]}">
+        <a class="btn btn-primary py-3 my-3" target="_blank" href="{currentRoute.brochure[0]}">
             <img class="svg" src="/assets/svg/download.svg" alt="svg descargar"> Folleto
         </a>
 
-        <a class="btn btn-secondary py-3 my-3" target="_black" href="{currentRoute.brochure[1]}">
+        <a class="btn btn-secondary py-3 my-3" target="_blank" href="{currentRoute.brochure[1]}">
             <img class="svg" src="/assets/svg/download.svg" alt="svg descargar"> Folleto detallado
         </a>
     
         {:else}
-        <a class="btn btn-primary py-3 my-3" target="_black" href="{currentRoute.brochure[0]}">
+        <a class="btn btn-primary py-3 my-3" target="_blank" href="{currentRoute.brochure[0]}">
             <img class="svg" src="/assets/svg/download.svg" alt="svg descargar"> Folleto
         </a>
 
