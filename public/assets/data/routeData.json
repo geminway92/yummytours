@@ -96,8 +96,8 @@
             "photo": "https://res.cloudinary.com/ddn278n2q/image/upload/v1654691887/yummyTours/ojlpsabsc6zz1n9jmodh.jpg",
             "location": "Santander",
             "available": ["Abril","Junio","Julio","Agosto","Septiembre"],
-            "output": [],
-            "brochure": [],
+            "output": ["Málaga","Madrid"],
+            "brochure": ["https://drive.google.com/file/d/15MxowciUupgTOsJXjwAR4rdBSqF94z6y/view?usp=sharing", "https://drive.google.com/file/d/1o8EZ1O6p9Y5WzwZcvG9_lKXG63har4rZ/view?usp=sharing"],
             "video": [],
             "price": 790
         },
