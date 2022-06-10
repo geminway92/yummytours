@@ -85,6 +85,10 @@ fetch("/assets/data/routeData.json")
         findByID(routesList: object[] ){
             return routesList.find( route => route['title'] === this.#id)
         }
+
+        convertInString(){
+            return currentRoute.output.toString().replaceAll(',', ', ')
+        }
     }
 
     const currentRoute = new CurrentRoute(params['id'], params['id'])
@@ -97,6 +101,8 @@ fetch("/assets/data/routeData.json")
             key.forEach(key => {
                 currentRoute[key] = route[key]
             });
+
+            console.log(currentRoute.output.toString().replaceAll(',', ', '))
         }
     }
 
@@ -126,12 +132,12 @@ fetch("/assets/data/routeData.json")
         <img class="svg" src="/assets/svg/euro.svg" alt="svg euro">
         <p class="m-0">Desde {currentRoute.price} €</p>
     </div>
-    <div class="w-75 d-flex justify-content-start align-items-center gap-2">
+    <div class="w-75 d-flex justify-content-start align-items-center my-2 gap-2">
         <img class="svg" src="/assets/svg/salida.svg" alt="svg salida">
-        <p class="m-0">Salida: {currentRoute.output}</p>
+        <p class="m-1">{currentRoute.convertInString()}</p>        
     </div>
 
-    <button on:click={() => isActiveModal = !isActiveModal} class="bg-success fw-bold text-white border-0 rounded p-3">Entradas</button>
+    <button on:click={() => isActiveModal = !isActiveModal} class="bg-success fw-bold text-white border-0 rounded my-3 p-3">Entradas</button>
     <hr >
 
         {#if currentRoute.brochure.length === 2}
