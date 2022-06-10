@@ -125,8 +125,8 @@
                 {"from": "2022/12/05", "to": "2022/12/08"},
                 {"from": "2022/12/25", "to": "2022/12/28"}
             ],
-            "output": [],
-            "brochure": [],
+            "output": ["Málaga","Madrid"],
+            "brochure": ["https://drive.google.com/file/d/1-PTkn4PKo4T45V3PVO0CMJKZkbHGEjN-/view?usp=sharing","https://drive.google.com/file/d/1j3O45zqvgp88Ww8kZTd7F1LT_VhMzOml/view?usp=sharing"],
             "video": [],
             "price": 590.45
         },
@@ -235,7 +235,7 @@
                 {"from": "2022/12/06", "to": "2022/12/08"},
                 {"from": "2022/12/24", "to": "2022/12/26"}
             ],
-            "output": [],
+            "output": ["Málaga", "Madrid"],
             "brochure": [],
             "video": [],
             "price": 441.11
