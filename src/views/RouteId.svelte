@@ -1,4 +1,5 @@
 <script lang="ts">
+import Reserve from "../components/Reserve.svelte";
 import RoutesTour from "./RoutesTour.svelte";
 
 
@@ -8,6 +9,7 @@ export let params = {};
 let routeList: Object[] = [];
 let route: Object = {}
 let widthIframe: number = 300;
+let isActiveModal: boolean = false;
 
 fetch("/assets/data/routeData.json")
     .then(res => res.json())
@@ -103,9 +105,18 @@ fetch("/assets/data/routeData.json")
             widthIframe = 630
         }
     }
-    
-
+    const handleShowModal = () => {
+        isActiveModal = !isActiveModal;
+    }
 </script>
+
+{#if isActiveModal}
+<div class="bg-container z-index w-100 h-100 position-absolute d-flex justify-content-center align-items-center">
+    {#if currentRoute.output}
+         <Reserve {handleShowModal} ObjectReserve={currentRoute} />
+    {/if}
+</div>
+{/if}
 {#if currentRoute.price}
      
 <div class="m-special container w-100 d-flex flex-column align-items-center">
@@ -119,9 +130,9 @@ fetch("/assets/data/routeData.json")
         <img class="svg" src="/assets/svg/salida.svg" alt="svg salida">
         <p class="m-0">Salida: {currentRoute.output}</p>
     </div>
-    
-    
-        
+
+    <button on:click={() => isActiveModal = !isActiveModal} class="bg-success fw-bold text-white border-0 rounded p-3">Entradas</button>
+    <hr >
 
         {#if currentRoute.brochure.length === 2}
         <a class="btn btn-primary fw-bold py-3 my-3" target="_blank" href="{currentRoute.brochure[0]}">
@@ -147,7 +158,7 @@ fetch("/assets/data/routeData.json")
     
 </div>
 {:else}
-<div class="container m-special  d-flex justify-content-center align-items-center">
+<div class="container m-special d-flex justify-content-center align-items-center">
 
     <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
         <span class="sr-only">Loading...</span>
@@ -160,6 +171,19 @@ fetch("/assets/data/routeData.json")
 a{
     width: 200px;
 }
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color:black;
+  height: 1px;
+}
+.z-index{
+    z-index: 2;
+}
+
 .photo-tour{
     width: 80%;
     height: 200px;
