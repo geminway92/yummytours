@@ -23,10 +23,6 @@ class RouteTour {
         
     }
 
-    showRoute(){
-        console.log(this.#price, this.#title)
-    }
-
     addRoute(route: Object){
         this.routes.push(route)
     }

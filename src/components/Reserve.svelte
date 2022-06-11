@@ -1,27 +1,36 @@
 <script lang="ts">
 import type AvailableDate from "src/interfaces/AvailableDate.interface";
-
+import { toast } from '@zerodevx/svelte-toast'
 
     export let ObjectReserve;
     export let handleShowModal;
 
-    
     let selectOutput: string = '';
     let selectPerson: number = 1;
     let selectDate: string = '';
+
+ 
     let dateForm: Reserve;
-    let disabledButon: boolean = true;
+    let disabledBtnReserve: boolean = true;
+    let disabledBtnCompletedReserve: boolean = true;
+    let showDateContact: boolean = false;
+
+    let form = {
+        name: '',
+        surname: '',
+        phone: ''
+    }
 
     class Reserve {
         #output:       string = '';
         #numberPerson: number = 0;
         #price:        number = undefined;
         #date:         AvailableDate = null;
-        constructor( output: string, numberPerson: number, price: number){
+        constructor( output: string, numberPerson: number, price: number, date?: AvailableDate){
             this.#output = output;
             this.#numberPerson = numberPerson;
             this.#price = price;
-            this.#date;
+            this.#date = date;
         }
 
         get output(){
@@ -71,36 +80,115 @@ import type AvailableDate from "src/interfaces/AvailableDate.interface";
             priceTotal = this.priceTotal();
         
             if(this.#date && this.#output && this.#date){
-                disabledButon = false;
-                console.log('Validado')
-            }else {
-                disabledButon = true;
-                console.log('No valido')
+                disabledBtnReserve = false;
+                return
+                
             }
+
+            disabledBtnReserve = true;
         }
     }
-    
 
+    class Client extends Reserve {
+        #name: string;
+        #surname: string;
+        #phone: string;
+        
+        constructor(output: string, numberPerson: number, price: number, date?: AvailableDate){
+            super(output, numberPerson, price, date)
+            this.#name;
+            this.#surname;
+            this.#phone;
+        }
+
+        get name(){
+            return this.#name;
+        }
+
+        get surname(){
+            return this.#surname;
+        }
+
+        get phone(){
+            return this.#phone;
+        }
+
+        set name(newName){
+            this.#name = newName;
+        }
+        
+        set surname(newSurname){
+            this.#surname = newSurname;
+        }
+        set phone(newPhone){
+            this.#phone = newPhone;
+        }
+
+        updateDate(){
+            this.#name = form.name;
+            this.#surname = form.surname;
+            this.#phone = form.phone;
+        
+        }
+
+        validateForm(){
+            this.updateDate();
+            priceTotal = this.priceTotal();
+        
+            if(this.#name && this.#surname && this.#phone){
+                disabledBtnCompletedReserve = false;
+                return
+            }
+
+            disabledBtnCompletedReserve = true;
+        }
+        
+    }
+    
+    let newClient;
     $: {
         if(ObjectReserve){
             dateForm =  new Reserve("", 1, ObjectReserve.price);
-            console.log(ObjectReserve)
+            newClient = new Client("", 1, ObjectReserve.price)
         }
     }   
 
     $: priceTotal = dateForm.priceTotal();
 
    const register = () => {
-    console.log('se ha registrado', dateForm)
+        toast.push('Registrado correctamente',{theme: {
+            '--toastBackground': '#48BB78',
+            '--toastBarBackground': '#2F855A'
+        }
+
+    })
+
+    
+    Object.keys(form).forEach( key => {
+        form[key] = '';
+    })
+
+    const keySelect = ['selectOutput','selectPerson','selectDate']
+    dateForm =  new Reserve("", 1, ObjectReserve.price);
+    newClient = new Client("", 1, ObjectReserve.price)
+
+    selectOutput = '';
+    selectPerson =  1;
+    selectDate = '';
+    handleShowModal()
+
+    showDateContact = !showDateContact;
+    
    }
 
     
 </script>
 
+{#if !showDateContact}
 <div class="w-75 card p-4 shadow-lg position-relative">
     <button on:click={handleShowModal} type="button" class="btn-close position-absolute top-0 end-0 m-2"></button>
     <h2 class="my-3 text-center">{ObjectReserve.title}</h2>
-    <form on:change={() => dateForm.validateForm()}  on:submit|preventDefault="{ () => register()}" class="d-flex flex-column align-items-center">
+    <form on:change={() => dateForm.validateForm()}  on:submit|preventDefault="{() => showDateContact = true}" class="d-flex flex-column align-items-center">
         <div class="w-75 d-flex flex-column justify-content-start align-items-center gap-2">
             
             <label for="output" class="m-2">
@@ -144,7 +232,27 @@ import type AvailableDate from "src/interfaces/AvailableDate.interface";
             <p>Precio total: {priceTotal} €</p>
         </div>
 
-        <button disabled={disabledButon} type="submit" class="btn btn-secondary py-3 my-3 fw-bold w-75">Reservar</button>
+        <button disabled={disabledBtnReserve} type="submit" class="btn btn-secondary py-3 my-3 fw-bold w-75">Reservar</button>
 
     </form>
 </div>
+{:else}
+    <div class="w-75 card p-4 shadow-lg d-flex justify-content-center align-items-center">
+        <h1>Un paso más</h1>
+        <p class="text-center">
+            Añade tus datos de contactos y le reservaremos la ruta <span class="text-primary fw-bold">{ObjectReserve.title}</span>
+        </p>
+
+        <form  on:change={() => newClient.validateForm()}  on:submit|preventDefault={() => register()} class="d-flex flex-column align-items-center gap-3">
+            <label for="name">Nombre</label>
+            <input bind:value={form.name} class="form-control" id="name" type="text">
+
+            <label for="surname">Apellidos</label>
+            <input bind:value={form.surname} class="form-control" id="surname" type="text">
+
+            <label for="phone">Teléfono</label>
+            <input bind:value={form.phone} class="form-control" id="phone" type="text">
+            <button disabled={disabledBtnCompletedReserve} type="submit" class="btn btn-secondary py-3 my-3 fw-bold w-75">Completar Reserva</button>
+        </form>
+    </div>
+{/if}

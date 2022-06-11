@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Router, Link, Route } from "svelte-routing";
+  import { SvelteToast } from '@zerodevx/svelte-toast'
 
   import Home from "./views/Home.svelte";
   import About from "./views/About.svelte";
@@ -12,10 +13,14 @@
     isActiveMenu = !isActiveMenu;
   }
 
+  const options = {
+    
+  }
 
 </script>
 
 <div>
+  <SvelteToast {options} />
 <Router>
   <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-sm">
     <div class="container-fluid">

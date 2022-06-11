@@ -111,8 +111,6 @@ fetch("/assets/data/routeData.json")
             key.forEach(key => {
                 currentRoute[key] = route[key]
             });
-
-            console.log(currentRoute.output.toString().replaceAll(',', ', '))
         }
     }
 
