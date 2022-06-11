@@ -308,8 +308,8 @@
                 {"from": "2022/08/10", "to": "2022/08/13"}
             ],
             "output": ["Málaga","Almería","Granada","Jaén","Córdoba","Sevilla","Cádiz","Huelva"],
-            "brochure": [],
-            "video": [],
+            "brochure": ["https://drive.google.com/file/d/1EEJ1IEItCOGf9QDP_AEzWi7pPeWgaDX-/view?usp=sharing","https://drive.google.com/file/d/1PuI6zxse6ATLqA6aofxMk9Ez8b0HZmwl/view?usp=sharing"],
+            "video": ["https://www.youtube.com/embed/lCQEiwVXbSs"],
             "price": 465
         },
         {

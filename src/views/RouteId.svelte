@@ -27,6 +27,7 @@ fetch("/assets/data/routeData.json")
         #output: string[] = [];
         #brochure: string[] = [];
         #video: string[] = [];
+        #availableDate: object[] = [];
         
         constructor(id: string, title: string, price?: number, photo?: string, output?: string[]){
             this.#id = id;
@@ -36,6 +37,7 @@ fetch("/assets/data/routeData.json")
             this.#output = output;
             this.#brochure;
             this.#video;
+            this.#availableDate;
         }
 
         get id(){
@@ -62,6 +64,10 @@ fetch("/assets/data/routeData.json")
             return this.#video;
         }
         
+        get availableDate(){
+            return this.#availableDate;
+        }
+        
         set price(newPrice: number){
             this.#price =  newPrice;
         }
@@ -81,6 +87,10 @@ fetch("/assets/data/routeData.json")
         set video(newVideo){
             this.#video = newVideo;
         }
+        
+        set availableDate(newavailableDate){
+            this.#availableDate = newavailableDate;
+        }
 
         findByID(routesList: object[] ){
             return routesList.find( route => route['title'] === this.#id)
@@ -95,7 +105,7 @@ fetch("/assets/data/routeData.json")
 
     $:{
         if(routeList.length > 0){
-            const key = ['price','photo','output','brochure','video']
+            const key = ['price','photo','output','brochure','video', 'availableDate']
             
             route = currentRoute.findByID(routeList)
             key.forEach(key => {
