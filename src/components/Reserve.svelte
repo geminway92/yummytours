@@ -159,27 +159,17 @@ import { toast } from '@zerodevx/svelte-toast'
         toast.push('Registrado correctamente',{theme: {
             '--toastBackground': '#48BB78',
             '--toastBarBackground': '#2F855A'
-        }
+        }})
 
-    })
+        const keySelect = ['selectOutput','selectPerson','selectDate']
+        handleShowModal()
 
+        showDateContact = !showDateContact;
     
-    Object.keys(form).forEach( key => {
-        form[key] = '';
-    })
-
-    const keySelect = ['selectOutput','selectPerson','selectDate']
-    dateForm =  new Reserve("", 1, ObjectReserve.price);
-    newClient = new Client("", 1, ObjectReserve.price)
-
-    selectOutput = '';
-    selectPerson =  1;
-    selectDate = '';
-    handleShowModal()
-
-    showDateContact = !showDateContact;
+    }
     
-   }
+    
+   
 
     
 </script>
@@ -243,7 +233,7 @@ import { toast } from '@zerodevx/svelte-toast'
             Añade tus datos de contactos y le reservaremos la ruta <span class="text-primary fw-bold">{ObjectReserve.title}</span>
         </p>
 
-        <form  on:change={() => newClient.validateForm()}  on:submit|preventDefault={() => register()} class="d-flex flex-column align-items-center gap-3">
+        <form on:change={() => newClient.validateForm()}  on:submit|preventDefault={() => register()} class="d-flex flex-column align-items-center gap-3">
             <label for="name">Nombre</label>
             <input bind:value={form.name} class="form-control" id="name" type="text">
 
