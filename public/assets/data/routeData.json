@@ -152,7 +152,7 @@
                 {"from": "2022/12/27", "to": "2022/12/30"}
             ],
             "output": ["Málaga","Almería","Granada","Jaén","Córdoba","Sevilla","Cádiz","Huelva"],
-            "brochure": [],
+            "brochure": ["https://drive.google.com/file/d/1MvTt3zufrKyEmVqkkBrBFyLeyDajt2RN/view?usp=sharing","https://drive.google.com/file/d/1SgMVCMe1E7mLwZziYPfE01hyfbc2M3QP/view?usp=sharing"],
             "video": [],
             "price": 478.68
         },
@@ -213,7 +213,7 @@
                 {"from": "2022/08/25", "to": "2022/08/27"}
             ],
             "output": ["Málaga","Madrid"],
-            "brochure": [],
+            "brochure": ["https://drive.google.com/file/d/15JKrRGzBm5u1fWMBj8o_dGz7h_lsSC3D/view?usp=sharing","https://drive.google.com/file/d/1HpPRXL1P6bnNv_06xCS52bBQ9vn0cEF5/view?usp=sharing"],
             "video": [],
             "price": 655.35
         },
