@@ -39,7 +39,7 @@
         }
 
         priceTotal(){
-            return this.#price * this.#numberPerson
+            return (this.#price * this.#numberPerson).toFixed(2)
         }
     }
     let dateForm: Reserve;
