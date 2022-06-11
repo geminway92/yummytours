@@ -16,9 +16,9 @@
                 {"from": "2022/10/12", "to": "2022/10/14"}
             ],
             "output": ["Málaga","Almería","Granada","Jaén","Córdoba","Sevilla","Cádiz","Huelva"],
-            "brochure": ["Enero","Mayo", "Julio", "Agosto", "Septiembre", "Obtubre"],
+            "brochure": ["https://drive.google.com/file/d/1R28-ryGmhZlm5vdWiqCDiBLA-TRhFQo4/view?usp=sharing","https://drive.google.com/file/d/1nxU6iaJCpyBJfgzukVsWMkqWuoB_OWXe/view?usp=sharing"],
             "video": [],
-            "price": 338.5
+            "price": 330
         },
         {
             "title": "Legado de Cáceres",
