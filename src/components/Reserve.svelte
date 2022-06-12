@@ -161,7 +161,6 @@ import { toast } from '@zerodevx/svelte-toast'
             '--toastBarBackground': '#2F855A'
         }})
 
-        const keySelect = ['selectOutput','selectPerson','selectDate']
         handleShowModal()
 
         showDateContact = !showDateContact;
