@@ -174,20 +174,22 @@ import { toast } from '@zerodevx/svelte-toast'
 </script>
 
 {#if !showDateContact}
-<div class="w-75 card p-4 shadow-lg position-relative">
-    <button on:click={handleShowModal} type="button" class="btn-close position-absolute top-0 end-0 m-2"></button>
+<div class="container row d-flex justify-content-center">
+
+    <div class="col-sm-4 card p-4 shadow-lg position-relative">
+        <button on:click={handleShowModal} type="button" class="btn-close position-absolute top-0 end-0 m-3"></button>
     <h2 class="my-3 text-center">{ObjectReserve.title}</h2>
     <form on:change={() => dateForm.validateForm()}  on:submit|preventDefault="{() => showDateContact = true}" class="d-flex flex-column align-items-center">
-        <div class="w-75 d-flex flex-column justify-content-start align-items-center gap-2">
+        <div class="w-75 col-xs-3 d-flex flex-column justify-content-start align-items-center gap-2">
             
             <label for="output" class="m-2">
                 <img class="svg" src="/assets/svg/salida.svg" alt="svg salida">
                 Salida:
             </label>
             <select  bind:value={selectOutput} class="form-select" name="output" id="output">
-                    <option value=""> -- </option>
+                <option value=""> -- </option>
                 {#each ObjectReserve.output as output}
-                    <option value={output}>{output}</option>
+                <option value={output}>{output}</option>
                 {/each}
             </select>
 
@@ -200,7 +202,7 @@ import { toast } from '@zerodevx/svelte-toast'
             <select bind:value={selectDate} class="form-select" name="person" id="person-number">
                 <option value=""> -- </option>
                 {#each ObjectReserve.availableDate as date }
-                     <option value={date.from}>{date.from} - {date.to}</option>
+                <option value={date.from}>{date.from} - {date.to}</option>
                 {/each}
             </select>
         </div>
@@ -212,7 +214,7 @@ import { toast } from '@zerodevx/svelte-toast'
             </label>
             <select bind:value={selectPerson} class="form-select" name="person" id="person-number">
                 {#each Array(20) as _, i}
-                     <option value={i + 1}>{i+1}</option>
+                <option value={i + 1}>{i+1}</option>
                 {/each}
             </select>
         </div>
@@ -220,36 +222,40 @@ import { toast } from '@zerodevx/svelte-toast'
             
             <p>Precio total: {priceTotal} €</p>
         </div>
-
+        
         <button disabled={disabledBtnReserve} type="submit" class="btn btn-secondary py-3 my-3 fw-bold w-75">Reservar</button>
-
+        
     </form>
 </div>
+</div>
 {:else}
-    <div class="w-75 card p-4 shadow-lg d-flex justify-content-center align-items-center">
+<div class="container row d-flex justify-content-center">
+
+    <div class="col-sm-4 card p-4 shadow-lg d-flex justify-content-center align-items-center">
         <h1>Un paso más</h1>
         <p class="text-center">
             Añade tus datos de contactos y le reservaremos la ruta <span class="text-primary fw-bold">{ObjectReserve.title}</span>
         </p>
-
-        <form on:change={() => newClient.validateForm()}  on:submit|preventDefault={() => register()} class=" w-75 d-flex flex-column align-items-center gap-3">
+        
+        <form on:change={() => newClient.validateForm()}  on:submit|preventDefault={() => register()} class="w-100 d-flex flex-column align-items-center gap-3">
             <label for="name">Nombre</label>
-            <input bind:value={form.name} class="form-control" id="name" type="text">
-
-            <label for="surname">Apellidos</label>
-            <input bind:value={form.surname} class="form-control" id="surname" type="text">
-
-            <label for="phone">Teléfono</label>
-            <input bind:value={form.phone} class="form-control" id="phone" type="text">
-            <button disabled={disabledBtnCompletedReserve} type="submit" class="btn btn-secondary py-3 my-3 fw-bold w-50">Completar Reserva</button>
-            <button on:click={handleShowModal()} type="button" class="btn btn-danger py-3 fw-bold w-50">Cancelar</button>
-        </form>
-    </div>
+            <input bind:value={form.name} class="form-control w-75" id="name" type="text">
+            
+                <label for="surname">Apellidos</label>
+                <input bind:value={form.surname} class="form-control w-75" id="surname" type="text">
+                
+                <label for="phone">Teléfono</label>
+                <input bind:value={form.phone} class="form-control w-75" id="phone" type="text">
+                <button disabled={disabledBtnCompletedReserve} type="submit" class="btn-reserver btn btn-secondary py-3 my-3 fw-bold w-50">Completar Reserva</button>
+                <button on:click={handleShowModal()} type="button" class="btn-reserver btn btn-danger py-3 fw-bold w-50">Cancelar</button>
+            </form>
+        </div>
+</div>
 {/if}
 
 
 <style>
-button{
+.btn-reserver{
     width: 200px;
 }
 </style>
