@@ -232,7 +232,7 @@ import { toast } from '@zerodevx/svelte-toast'
             Añade tus datos de contactos y le reservaremos la ruta <span class="text-primary fw-bold">{ObjectReserve.title}</span>
         </p>
 
-        <form on:change={() => newClient.validateForm()}  on:submit|preventDefault={() => register()} class="d-flex flex-column align-items-center gap-3">
+        <form on:change={() => newClient.validateForm()}  on:submit|preventDefault={() => register()} class=" w-75 d-flex flex-column align-items-center gap-3">
             <label for="name">Nombre</label>
             <input bind:value={form.name} class="form-control" id="name" type="text">
 
@@ -241,7 +241,15 @@ import { toast } from '@zerodevx/svelte-toast'
 
             <label for="phone">Teléfono</label>
             <input bind:value={form.phone} class="form-control" id="phone" type="text">
-            <button disabled={disabledBtnCompletedReserve} type="submit" class="btn btn-secondary py-3 my-3 fw-bold w-75">Completar Reserva</button>
+            <button disabled={disabledBtnCompletedReserve} type="submit" class="btn btn-secondary py-3 my-3 fw-bold w-50">Completar Reserva</button>
+            <button on:click={handleShowModal()} type="button" class="btn btn-danger py-3 fw-bold w-50">Cancelar</button>
         </form>
     </div>
 {/if}
+
+
+<style>
+button{
+    width: 200px;
+}
+</style>
