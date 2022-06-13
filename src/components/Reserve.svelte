@@ -1,6 +1,7 @@
 <script lang="ts">
-import type AvailableDate from "src/interfaces/AvailableDate.interface";
 import { toast } from '@zerodevx/svelte-toast'
+
+import type AvailableDate from "src/interfaces/AvailableDate.interface";
 
     export let ObjectReserve;
     export let handleShowModal;
@@ -11,6 +12,8 @@ import { toast } from '@zerodevx/svelte-toast'
 
  
     let dateForm: Reserve;
+    let newClient: Client;
+
     let disabledBtnReserve: boolean = true;
     let disabledBtnCompletedReserve: boolean = true;
     let showDateContact: boolean = false;
@@ -20,6 +23,8 @@ import { toast } from '@zerodevx/svelte-toast'
         surname: '',
         phone: ''
     }
+
+    let errors = {name: '', surname: '', phone: ''}
 
     class Reserve {
         #output:       string = '';
@@ -128,24 +133,51 @@ import { toast } from '@zerodevx/svelte-toast'
             this.#name = form.name;
             this.#surname = form.surname;
             this.#phone = form.phone;
-        
         }
 
         validateForm(){
+
             this.updateDate();
             priceTotal = this.priceTotal();
         
-            if(this.#name && this.#surname && this.#phone){
-                disabledBtnCompletedReserve = false;
-                return
+            if(this.#name.trim().length < 3){
+                errors.name = "El nombre debe contener al menos 3 carácteres"
+            
+            }else {
+                errors.name = '';
             }
 
-            disabledBtnCompletedReserve = true;
+            if(this.#surname.trim().length < 3){
+                errors.surname = "El apellido debe contener al menos 3 carácteres"
+                
+            }else{
+                errors.surname = '';
+            }
+            
+            if(this.#phone && !this.#phone.match(/[0-9]{9}/)){
+                errors.phone = "El teléfono no es correcto";
+            }else {
+                errors.phone = '';
+            }
+
+            if(this.#phone === ''){
+                errors.phone = "Introduce un teléfono"
+            }
+
+            if(!errors.name && !errors.surname && !errors.phone){
+                disabledBtnCompletedReserve = false;
+                
+            } else {
+                disabledBtnCompletedReserve = true;
+            }
+                
+            
+            
         }
         
     }
     
-    let newClient;
+    
     $: {
         if(ObjectReserve){
             dateForm =  new Reserve("", 1, ObjectReserve.price);
@@ -155,15 +187,16 @@ import { toast } from '@zerodevx/svelte-toast'
 
     $: priceTotal = dateForm.priceTotal();
 
-   const register = () => {
-        toast.push('Registrado correctamente',{theme: {
-            '--toastBackground': '#48BB78',
-            '--toastBarBackground': '#2F855A'
-        }})
-
-        handleShowModal()
-
-        showDateContact = !showDateContact;
+    const register = () => {
+        dateForm.validateForm()
+            toast.push('Registrado correctamente',{theme: {
+                '--toastBackground': '#48BB78',
+                '--toastBarBackground': '#2F855A'
+            }})
+            
+            handleShowModal()    
+            showDateContact = !showDateContact;
+       
     
     }
     
@@ -237,15 +270,25 @@ import { toast } from '@zerodevx/svelte-toast'
             Añade tus datos de contactos y le reservaremos la ruta <span class="text-primary fw-bold">{ObjectReserve.title}</span>
         </p>
         
-        <form on:change={() => newClient.validateForm()}  on:submit|preventDefault={() => register()} class="w-100 d-flex flex-column align-items-center gap-3">
+        <form on:input={() => newClient.validateForm()} on:submit|preventDefault={() => register()} class="w-100 d-flex flex-column align-items-center gap-2">
             <label for="name">Nombre</label>
             <input bind:value={form.name} class="form-control w-75" id="name" type="text">
-            
+            <div class="text-danger w-75">
+                {errors.name}
+            </div>
                 <label for="surname">Apellidos</label>
                 <input bind:value={form.surname} class="form-control w-75" id="surname" type="text">
+                <div class="text-danger w-75">
+                    {errors.surname}
+                </div>
+                
                 
                 <label for="phone">Teléfono</label>
-                <input bind:value={form.phone} class="form-control w-75" id="phone" type="text">
+                <input bind:value={form.phone} class="form-control w-75" id="phone" type="tel">
+                <div class="text-danger w-75">
+                    {errors.phone}
+                </div>
+
                 <button disabled={disabledBtnCompletedReserve} type="submit" class="btn-reserver btn btn-secondary py-3 my-3 fw-bold w-50">Completar Reserva</button>
                 <button on:click={handleShowModal()} type="button" class="btn-reserver btn btn-danger py-3 fw-bold w-50">Cancelar</button>
             </form>
@@ -255,6 +298,11 @@ import { toast } from '@zerodevx/svelte-toast'
 
 
 <style>
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 .btn-reserver{
     width: 200px;
 }
