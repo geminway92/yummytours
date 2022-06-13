@@ -6,6 +6,7 @@ import type AvailableDate from "src/interfaces/AvailableDate.interface";
     export let ObjectReserve;
     export let handleShowModal;
 
+    let priceTotal: number = ObjectReserve.price;
     let selectOutput: string = '';
     let selectPerson: number = 1;
     let selectDate: string = '';
@@ -31,11 +32,14 @@ import type AvailableDate from "src/interfaces/AvailableDate.interface";
         #numberPerson: number = 0;
         #price:        number = undefined;
         #date:         AvailableDate = null;
-        constructor( output: string, numberPerson: number, price: number, date?: AvailableDate){
+        #priceTotal:   number = undefined;
+        constructor( output: string, numberPerson: number, price: number, priceTotal: number, date?: AvailableDate){
             this.#output = output;
             this.#numberPerson = numberPerson;
             this.#price = price;
             this.#date = date;
+            this.#priceTotal = priceTotal;
+    
         }
 
         get output(){
@@ -57,6 +61,10 @@ import type AvailableDate from "src/interfaces/AvailableDate.interface";
         get numberPerson(){
             return this.#numberPerson;
         }
+
+        get priceTotal(){
+            return this.#priceTotal;
+        }
         set numberPerson(newNumberPerson: number){
             this.#numberPerson = newNumberPerson;
         }
@@ -69,28 +77,31 @@ import type AvailableDate from "src/interfaces/AvailableDate.interface";
             this.#date = newDate;
         }
 
-        priceTotal(){
-            return (this.#price * this.#numberPerson).toFixed(2)
+        set priceTotal(newPrice: number){
+            this.#priceTotal = newPrice;
         }
 
         updateDate(){
             this.#output = selectOutput;
             this.#numberPerson = selectPerson;
-            this.#date =  ObjectReserve.availableDate.find(route => route.from === selectDate);
-        
+            this.#date =  ObjectReserve.availableDate.find(route => route.from === selectDate); 
+            this.#priceTotal = Number((this.#price * this.#numberPerson).toFixed(2))
+            
+            priceTotal = this.#priceTotal
         }
 
         validateForm(){
             this.updateDate();
-            priceTotal = this.priceTotal();
         
             if(this.#date && this.#output && this.#date){
                 disabledBtnReserve = false;
                 return
                 
             }
-
+        
             disabledBtnReserve = true;
+
+           
         }
     }
 
@@ -99,8 +110,8 @@ import type AvailableDate from "src/interfaces/AvailableDate.interface";
         #surname: string;
         #phone: string;
         
-        constructor(output: string, numberPerson: number, price: number, date?: AvailableDate){
-            super(output, numberPerson, price, date)
+        constructor(output: string, numberPerson: number, price: number, priceTotal: number, date?: AvailableDate){
+            super(output, numberPerson, price, priceTotal, date)
             this.#name;
             this.#surname;
             this.#phone;
@@ -138,7 +149,6 @@ import type AvailableDate from "src/interfaces/AvailableDate.interface";
         validateForm(){
 
             this.updateDate();
-            priceTotal = this.priceTotal();
         
             if(this.#name.trim().length < 3){
                 errors.name = "El nombre debe contener al menos 3 carácteres"
@@ -170,7 +180,7 @@ import type AvailableDate from "src/interfaces/AvailableDate.interface";
             } else {
                 disabledBtnCompletedReserve = true;
             }
-                
+            
             
             
         }
@@ -180,12 +190,12 @@ import type AvailableDate from "src/interfaces/AvailableDate.interface";
     
     $: {
         if(ObjectReserve){
-            dateForm =  new Reserve("", 1, ObjectReserve.price);
-            newClient = new Client("", 1, ObjectReserve.price)
+            dateForm =  new Reserve("", 1, ObjectReserve.price, ObjectReserve.price);
+            newClient = new Client("", 1, ObjectReserve.price, ObjectReserve.price)
         }
     }   
 
-    $: priceTotal = dateForm.priceTotal();
+
 
     const register = () => {
         dateForm.validateForm()
